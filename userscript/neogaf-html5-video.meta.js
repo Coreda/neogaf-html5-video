@@ -2,6 +2,7 @@
 // @name            NeoGAF HTML5 Video Embedder
 // @namespace       https://github.com/Coreda/neogaf-html5-video/
 // @version         1.0
+// @author          Coreda
 // @description     Enables embedded WebM/Mp4 support on NeoGAF.com
 // @homepageURL     https://github.com/Coreda/neogaf-html5-video/
 // @updateURL       https://github.com/Coreda/neogaf-html5-video/raw/master/userscript/neogaf-html5-video.meta.js
