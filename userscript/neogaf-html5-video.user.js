@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            NeoGAF HTML5 Video Embedder
 // @namespace       https://github.com/Coreda/neogaf-html5-video/
-// @version         1.01
+// @version         1.02
 // @author          Coreda
 // @description     Enables embedded WebM/Mp4 support on NeoGAF.com
 // @homepageURL     https://github.com/Coreda/neogaf-html5-video/
@@ -47,7 +47,7 @@ var addGlobalStyle = function (css) {
     head.appendChild(style);
 };
 
-addGlobalStyle('video { max-width: 100% ! important; margin-bottom: -4px; } blockquote.quote video { max-width: 400px !important }');
+addGlobalStyle('video { max-width: 100% ! important; margin-bottom: -4px; vertical-align: middle; } blockquote.quote video { max-width: 400px !important }');
 
 }
 
