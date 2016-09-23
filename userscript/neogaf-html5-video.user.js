@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            NeoGAF HTML5 Video Embedder
 // @namespace       https://github.com/Coreda/neogaf-html5-video/
-// @version         1.02
+// @version         1.1
 // @author          Coreda
 // @description     Enables embedded WebM/Mp4 support on NeoGAF.com
 // @homepageURL     https://github.com/Coreda/neogaf-html5-video/
@@ -13,42 +13,33 @@
 // @include         http://www.neogaf.com/*
 // @include         http://neogaf.net/*
 // @include         http://www.neogaf.net/*
+// @include         http://m.neogaf.com/*
 // @grant           none
 // ==/UserScript==
 
 (function() {
-    'use strict';
+    'use strict'
 
-var videos = document.querySelectorAll('.post a'),
-  link, video;
+    var videolinks = document.querySelectorAll('.post a[href$=".webm"], .post a[href$=".mp4"]')
 
-for (var i = 0; i < videos.length; i++) {
-  link = videos[i].href;
-  if (link.match(".webm$") || link.match(".mp4$")) {
-    video = document.createElement('video');
-    video.src = link;
-    video.preload = "metadata";
-    video.autoplay = false;
-    video.loop = true;
-    video.muted = true;
-    video.controls = true;
-    video.volume = 0.5;
+    for (var a of videolinks) {
+        var {href} = a
+        var video = document.createElement('video')
+        Object.assign(video, {className:'html5video', src: href, preload:'metadata', autoplay:false, loop:true, muted: true, controls: true, volume: 0.5})
+        var img = a.querySelector('img[src$=".jpg"], img[src$=".jpeg"], img[src$=".png"]')
+        if (img) video.poster = img.src
+        a.parentNode.replaceChild(video, a)
+    }
 
-    videos[i].parentNode.replaceChild(video, videos[i]);
-  }
+    var styling = function (css) {
+        var head, style
+        head = document.getElementsByTagName('head')[0]
+        if (!head) { return }
+        style = document.createElement('style')
+        style.innerHTML = css
+        head.appendChild(style)
+    }
 
-var addGlobalStyle = function (css) {
-    var head, style;
-    head = document.getElementsByTagName('head')[0];
-    if (!head) { return; }
-    style = document.createElement('style');
-    style.type = 'text/css';
-    style.innerHTML = css;
-    head.appendChild(style);
-};
+    styling('.html5video { max-width: 100%; vertical-align: middle; } .quote .html5video { max-width: 400px; } ')
 
-addGlobalStyle('video { max-width: 100% ! important; margin-bottom: -4px; vertical-align: middle; } blockquote.quote video { max-width: 400px !important }');
-
-}
-
-})();
+})()
