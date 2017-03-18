@@ -9,7 +9,7 @@ The video scaling behaves like regular images on the forum, including when quote
 
 ![screenshot](https://raw.githubusercontent.com/Coreda/neogaf-html5-video/master/images/Screenshot.jpg)
 
-###Default settings
+### Default settings
 
 - Muted by default
 - Unmuted volume set to 50%
