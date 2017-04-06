@@ -1,7 +1,12 @@
 # NeoGAF HTML5 Video Embedder
 A simple userscript that changes Mp4/WebM links on pages from NeoGAF.com to embedded HTML5 video elements.
 
-To install it you'll first need the [Tampermonkey addon](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) for Chrome (available also for [other browsers](http://tampermonkey.net/)), or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) for Firefox.
+To install it you'll first need to grab one of the following addons:
+
+- [Tampermonkey](http://tampermonkey.net/) | Desktop Chrome/Firefox/Opera, and Android (Dolphin/UC Browser)
+- [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) | Desktop Firefox
+- [USI](https://addons.mozilla.org/en-US/android/addon/userunified-script-injector/) | Android (Firefox) 
+- [Violentmonkey](https://addons.opera.com/en/extensions/details/violent-monkey/) | Opera Presto
 
 [![install](https://raw.githubusercontent.com/Coreda/neogaf-html5-video/master/images/install-button.png)](https://github.com/Coreda/neogaf-html5-video/raw/master/userscript/neogaf-html5-video.user.js)
 
